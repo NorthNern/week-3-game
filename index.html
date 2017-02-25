@@ -4,16 +4,25 @@
     <meta charset="UTF-8">
     <title>Hangman</title>
   	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+	<link rel="stylesheet" type=text/css href="assets/css/bootstrap.css">
   	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<meta name="viewport" content="width-device-width", initial-scale-1">
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
   </head>
   <body>
 <!--TODO make sure to include heroku details as well as json and php files, and the meyerweb reset css-->
 	
-
-	<div id = "game-picture"></div><br>
-	<div id = "game-guesses"></div> <br>
-	<div id = "game-text"></div>
+<div class="container" style="margin-top:50px;">
+  	<div class="row">
+  		<div class="col-sm-12 img-responsive center-block" id = "game-picture"></div><br>
+  	</div>
+  	<div class= "row">
+  		<div class="col-sm-12 center-block" id = "game-guesses"></div><br>
+	</div>
+	<div class="row">
+		<div class="col-sm-12" id = "game-text"></div>
+	</div>
+</div>	
 	
 	
 

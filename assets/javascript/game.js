@@ -18,8 +18,10 @@
 				var userGuessRemaining = 6;
 				var imageHangman = document.createElement("IMG");
 				imageHangman.src = "assets/images/6CheerfulPuppy.jpg"
+				imageHangman.alt = "6 wrong guesses left"
 				document.getElementById("game-picture").appendChild(imageHangman)
-				document.getElementById("game-guesses").innerHTML = "Letters Guessed:"
+				// document.getElementById("game-picture").childNodes[0].setAttribute(class, img-responsive center-block);
+				document.getElementById("game-guesses").innerHTML = "Letters Guessed:";
 
 				for (var i =0; i<computerWord.length; i++)	{
 					computerWordDisplay = computerWordDisplay.substr(0,i) + "_" + computerWordDisplay.substr(i+1);
@@ -64,10 +66,8 @@
 						} else {
 							var newImg = document.createElement("IMG");
 							newImg.src = "assets/images/0PlayDeadPuppy.jpg";
-							// var oldImg = document.getElementById("game-picture");
-							// document.getElementById("game-picture").replaceChild(newImg, oldImg);
-							// TODO:  the above wasn't working, not sure how to get it to work.would rather replace than append
-							document.getElementById("game-picture").appendChild(newImg);
+							var oldImg = document.getElementById("game-picture");
+							document.getElementById("game-picture").replaceChild(newImg, oldImg.childNodes[0]);
 							document.getElementById("game-text").innerHTML = "<br>Sorry, you lost the game.  The word was " + computerWord + ".  Please enjoy the humiliating sense of defeat and then try a new word!";
 							function refresh() {
 								setTimeout(function() {
@@ -85,11 +85,9 @@
 							//uncomment the following couple of lines to try sound:
 							//var audio = new Audio('audio_file.mp3');
 							//audio.play()
-							
-							// var oldImg = document.getElementById("game-picture");
-							// document.getElementById("game-picture").replaceChild(newImg, oldImg);
-							// TODO:  the above wasn't working, not sure how to get it to work.would rather replace than append
-							document.getElementById("game-picture").appendChild(newImg);
+
+							var oldImg = document.getElementById("game-picture");
+							document.getElementById("game-picture").replaceChild(newImg, oldImg.childNodes[0]);
 							document.getElementById("game-text").innerHTML = "<h1>Congratulations!! You won the game!  Please enjoy the awesome sense of victory and then try a new word!";
 							// TODO: Ask why timeout refresh function isn't working.
 							function refresh() {
@@ -102,47 +100,33 @@
 						if (userGuessRemaining === 5) {
 							var newImg = document.createElement("IMG");
 							newImg.src = "assets/images/5HappyPuppy.jpg";
-							// var oldImg = document.getElementById("game-picture");
-							// document.getElementById("game-picture").replaceChild(newImg, oldImg);
-							// TODO:  the above wasn't working, not sure how to get it to work.would rather replace than append
-							document.getElementById("game-picture").appendChild(newImg); 
+							var oldImg = document.getElementById("game-picture");
+							oldImg.replaceChild(newImg, oldImg.childNodes[0]);
 						}
 						if (userGuessRemaining === 4) {
 							var newImg = document.createElement("IMG");
 							newImg.src = "assets/images/4BewilderedPuppy.jpg";
-							// var oldImg = document.getElementById("game-picture");
-							// document.getElementById("game-picture").replaceChild(newImg, oldImg);
-							// TODO:  the above wasn't working, not sure how to get it to work.would rather replace than append
-							document.getElementById("game-picture").appendChild(newImg); 
+							var oldImg = document.getElementById("game-picture");
+							document.getElementById("game-picture").replaceChild(newImg, oldImg.childNodes[0]);
 						}
 						if (userGuessRemaining === 3) {
 							var newImg = document.createElement("IMG");
 							newImg.src = "assets/images/3MopeyPuppy.jpg";
-							// var oldImg = document.getElementById("game-picture");
-							// document.getElementById("game-picture").replaceChild(newImg, oldImg);
-							// TODO:  the above wasn't working, not sure how to get it to work.would rather replace than append
-							document.getElementById("game-picture").appendChild(newImg); 
+							var oldImg = document.getElementById("game-picture");
+							document.getElementById("game-picture").replaceChild(newImg, oldImg.childNodes[0]);
 						}
 						if (userGuessRemaining === 2) {
 							var newImg = document.createElement("IMG");
 							newImg.src = "assets/images/2SulkyPuppy.jpg";
-							// var oldImg = document.getElementById("game-picture");
-							// document.getElementById("game-picture").replaceChild(newImg, oldImg);
-							// TODO:  the above wasn't working, not sure how to get it to work.would rather replace than append
-							document.getElementById("game-picture").appendChild(newImg); 
+							var oldImg = document.getElementById("game-picture");
+							document.getElementById("game-picture").replaceChild(newImg, oldImg.childNodes[0]);
 						}
 						if (userGuessRemaining === 1) {
 							var newImg = document.createElement("IMG");
 							newImg.src = "assets/images/1AngryPuppy.jpg";
-							// var oldImg = document.getElementById("game-picture");
-							// document.getElementById("game-picture").replaceChild(newImg, oldImg);
-							// TODO:  the above wasn't working, not sure how to get it to work.would rather replace than append
-							document.getElementById("game-picture").appendChild(newImg); 
+							var oldImg = document.getElementById("game-picture");
+							document.getElementById("game-picture").replaceChild(newImg, oldImg.childNodes[0]);
 						}
-						// var img = document.createElement("IMG");
-						// img.src = "images/1.gif";
-						// var oldImg = document.getElementById('oldImg');
-						// document.getElementById('imgDiv').replaceChild(img, oldImg);
 							document.getElementById("game-text").innerHTML += "<br>The word is:  " + computerWordDisplay + ".  You have " + userGuessRemaining + " guesses remaining to guess the word.";
 							}
 					} // document.onkeyup endbracket
